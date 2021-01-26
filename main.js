@@ -5,7 +5,7 @@
 
 const numOne = document.querySelector('#num_one')
 const numTwo = document.querySelector('#num_two')
-const answer = document.querySelector('#answer')
+
 
 
 // Get number 1 and number 2
@@ -19,16 +19,19 @@ document.querySelector('#form')
    numOne.value = ''
    numTwo.value = ''
 
-   if(e.submitter.id=="add"){
-        answer.value = parseInt(a) + parseInt(b)
-   }else if (e.submitter.id=="substract"){
-        answer.value = parseInt(a) - parseInt(b)
-   }else if (e.submitter.id=="multiply"){
-        answer.value = parseInt(a) * parseInt(b)
-   }else if (e.submitter.id=="divide"){
-        answer.value = parseInt(a) / parseInt(b)
-   }
-   
+   let result;
 
+   if(e.submitter.id=="add"){
+        result = parseInt(a) + parseInt(b)
+   }else if (e.submitter.id=="substract"){
+        result = parseInt(a) - parseInt(b)
+   }else if (e.submitter.id=="multiply"){
+        result = parseInt(a) * parseInt(b)
+   }else if (e.submitter.id=="divide"){
+        result = parseInt(a) / parseInt(b)
+   }
+
+  document.querySelector('#answer').value = result
+    
 })
 
